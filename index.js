@@ -834,7 +834,7 @@ runProgramButton.addEventListener("click", function(ev) {
 function cleanProgramText(programText) {
   var outString = "";
   for (var i = 0; i < programText.length; i++) {
-      if (["r", "l", "u", "d", "f", "b"].includes(programText[i])) {
+      if (["r", "l", "d", "f", "b"].includes(programText[i])) {
         if (outString.length > 0 && programText[i] != "'") {
           outString += ",";
         }
