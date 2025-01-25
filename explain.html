@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rubiklang</title>
+        <link href = "index.css", rel = "stylesheet">
+    </head>
+    <body style = "background-color: #b0b0b0;">
+        <h1>Rubiklang Explanation</h1>
+        <h3>Zasharan2</h3>
+        <h3><a href = "index.html">Interpreter</a></h3>
+        <h4>Introduction</h4>
+        <p>Rubiklang (<span class = "ipa">/ˈɹuː.bɪ.klæŋ/</span>) is an esoteric programming language involving the 2x2x2 Rubik's cube. In Rubiklang, most turns have associated functions, and thus sequences of turns may be read in an algorithmic fashion.</p>
+        <p>Given some arbitrary instruction (e.g. "R"), the cube will first be turned according to that instruction. Then, the associated procedure will be run.</p>
+        <br>
+        <h4>Settings</h4>
+        <p>This interpreter provides two options for reading instructions: as moves and as instructions. When the "Make Turns" button is pressed, the moves will simply turn the cube, with no procedures being run. When the "Run Program" button is pressed, the moves will be executed along with their procedures.</p>
+        <p>There is additionally a speed setting, of which adjustments affect the turn speed of the Rubik's cube.</p>
+        <p>Within the interpreter, labels indicate properties about the program being executed, most of which are further expanded on below.</p>
+        <br>
+        <h4>Controls</h4>
+        <p>The program may be entered into a text area field beneath the cube simulation.</p>
+        <p>As a shorthand, free moves may be quickly typed with the lowercase variant x of some move X, which will automatically correct to the form U,U',X,U',U (clockwise only).</p>
+        <p>The Rubik's cube may be rotated by dragging. However, the faces designated F,R,U... etc. will not change with this rotation.</p>
+        <p>Upon entering input mode, a user may alter the cube state by clicking on the cube window, then typing the associated letters (e.g. "U" for a U turn or Shift + "L" for an L' turn).</p>
+        <br>
+        <h4>Instructions</h4>
+        <p>U (Free move mode toggle) - Toggles free move mode. In free move mode, all instructions except U are executed without their procedures, as just simple turns. Upon another U turn, free move mode is once again disabled.</p>
+        <p>L' (Input mode toggle) - Toggles input mode. In input mode, a user may make any moves to the cube they like (without the associated procedures). They conclude by making another L' turn, which toggles input mode off.</p>
+        <p>L (Output) - Outputs the character that is being described by the cube state. The method of encoding characters within the cube state is detailed below.</p>
+        <p>R (Clockwise turn) - Turns a face, determined by the majority colour (e.g. white implying U, or green implying F) of the cube's R face, clockwise. Ties are broken through the priority system detailed below.</p>
+        <p>R' (Anticlockwise turn) - Turns a face, determined by the majority colour of the cube's R face, anticlockwise.</p>
+        <p>F (Solve) - Solves the cube.</p>
+        <p>F' (Scramble) - Scrambles the cube.</p>
+        <p>D (Stop) - Terminates the program (regardless of whether or not there are more instructions).</p>
+        <p>D' (Restart) - Reads the cube state as a signed value (-648 to 647) and moves the instruction pointer that many steps.</p>
+        <p>B (Skip) - Skips the next instruction.</p>
+        <p>B' (Prepend) - Prepends the instruction determined by the cube state to the start of the program, if possible. (Changing the BLU top face to a nonzero value is interpreted as indicating the turn to be anticlockwise).</p>
+        <br>
+        <h4>Colour Numbering/Priority System</h4>
+        <p>Each colour is assigned a numerical value from 0 to 5, which is used in certain commands. Colours with lower numbers are prioritized before colours with higher numbers.</p>
+        <p>0: White</p>
+        <p>1: Orange</p>
+        <p>2: Green</p>
+        <p>3: Red</p>
+        <p>4: Blue</p>
+        <p>5: Yellow</p>
+        <p>(This numbering system is inspired by the lettering scheme of the Old Pochmann method).</p>
+        <br>
+        <h4>Cube State</h4>
+        <p>The colours present on the U face are used to encode the cube state, which is used in some procedures.</p>
+        <p>The colours on the top faces of the BLU, BRU, FLU, and FRU pieces represent the orders of magnitudes 6^3, 6^2, 6^1, and 6^0 respectively.</p>
+        <p>For instance, if the top face colours were BLU = orange, BRU = white, FLU = yellow, FRU = green, then the resultant cube state would be (1 * 216) + (0 * 36) + (5 * 6) + (2 * 1) = 248. Signed, this is -400, and as a character, this is "ø".</p>
+        <br>
+        <br>
+        <h4>Example Programs</h4>
+        <p>Print user char: U,U',L,U',U,L',L</p>
+        <p>Sets up the cube for user input, then prints the character configured by the user. (The user need not worry about setting up an L move to counteract their L', this behaviour is dealt with by the program).</p>
+        <br>
+        <p>Helloworld: U,U',B',D,B,L',U',U,L,U,U',F',D,F,D',F,D,F',L',U',U,L,U,U',R,D,R,D,R',D',D',L,D,L',L',U',U,L,U,U',L',U',U,L,U,U',D',F,D,F',L',U',U,L,U,U',F',D,F,D',R,D,R',D,D,F,D,D,F',D',F,D,F',L',U',U,L,U,U',R',D',R,D,D,B',D',B,F',D,R',D',R,L',U',U,L,U,U',F,L,D',L',D,D,B',D',B,L',U',U,L,U,U',D,B',D',B,D',D',L,D,L',L',U',U,L,U,U',D,D,F,D,D,F',D',F,D,F',D,D,L,D,L',L',U',U,L,U,U',L,D',L',L',U',U,L,U,U',B',D,B,R',D,R,D,L,D',L',L',U',U,L,U,U',D,D,B',D,B,D,F',L',U',U,L,D</p>
+        <p>Prints "Hello, World!".</p>
+    </body>
+</html>

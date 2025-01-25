@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rubiklang</title>
+        <link href = "index.css", rel = "stylesheet">
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.127/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.127/examples/jsm/"
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Rubiklang Interpreter</h1>
+        <h3><a href = "explain.html">Explanation</a></h3>
+        <script id = "mainScript", src = "index.js", type = "module"></script>
+        <div id = "canvasDiv" style="position: relative;">
+            <!-- <canvas id = "mainCanvas", width = "512px", height = "512px"></canvas> -->
+            <canvas id = "otherCanvas", width = "512px", height = "512px", style = "position:absolute; display: block; padding-left: 0; padding-right: 0; margin-left: auto; margin-right: auto; top: 0; z-index: 1;"></canvas>
+        </div>
+        <br>
+        <p id = "outputText"></p>
+        <button id = "makeTurnsButton">Make Turns</button>
+        <button id = "runProgramButton">Run Program</button>
+        <select id = "speedSelect">
+            <option>Slow</option>
+            <option selected = "selected">Normal</option>
+            <option>Fast</option>
+        </select>
+        <br>
+        <textarea id = "programTextInput", wrap = "hard", placeholder = "Type program here..."></textarea>
+        <!-- <script src = "index.js"></script> -->
+    </body>
+</html>

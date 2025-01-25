@@ -1,0 +1,127 @@
+body {
+    text-align: center;
+    background-color: #808080ff;
+    font-family: 'Comic Sans MS', 'Courier New', Courier, monospace;
+    /* overflow: hidden; */
+}
+
+#canvasDiv {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 512px;
+    display: block;
+}
+
+#otherCanvas {
+    pointer-events: none;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /* width: 800px; */
+}
+
+p {
+    font-family: 'Comic Sans MS', 'Courier New', Courier, monospace;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+    width: 50em;
+}
+
+.ipa {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#outputText {
+    width: 32em;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    white-space: pre;
+    background-color: #a0a0a0ff;
+    border-radius: 0.4em;
+    border: #202020ff solid;
+}
+
+select {
+    border-radius: 0.4em;
+    border: #202020ff solid;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #000000ff;
+    background-color: #606060ff;
+
+    transition: 0.1s;
+}
+
+select:hover {
+    background-color: #808080ff;
+}
+
+select:active {
+    background-color: #b0b0b0ff;
+}
+
+textarea {
+    resize: none;
+
+    border-radius: 0.4em;
+    border: #202020ff solid;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bold;
+
+    color: #000000ff;
+    background-color: #606060ff;
+}
+
+textarea::placeholder {
+    color: #404040ff;
+}
+
+#programTextInput {
+    width: 650px;
+    height: 250px;
+}
+
+button {
+    border-radius: 0.4em;
+    border: #202020ff solid;
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: bold;
+
+    color: #000000ff;
+    background-color: #606060ff;
+
+    transition: 0.1s;
+}
+
+button:hover {
+    background-color: #808080ff;
+}
+
+button:active {
+    background-color: #b0b0b0ff;
+}
+
